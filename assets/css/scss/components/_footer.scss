@@ -1,0 +1,86 @@
+footer {
+  background-color: #0b1529;
+  color: #fff;
+  padding: 140px 0 90px 0;
+  .footer-cols {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px;
+    .footer-col {
+      flex: 0 0 135px;
+      max-width: 135px;
+      width: 100%;
+      &.about-footer {
+        flex: 0 0 270px;
+        max-width: 270px;
+        .about-footer-logo {
+          display: block;
+          font-family: "Corbel", sans-serif;
+          font-weight: bold;
+          font-size: 32px;
+          color: #fff !important;
+          text-decoration: none !important;
+          margin-bottom: 4px;
+          line-height: 30px;
+        }
+        .about-footer-description {
+          font-size: 16px;
+          font-weight: 300;
+          color: #7d8388;
+          margin-bottom: 18px;
+        }
+        .social-icons {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .social-icon {
+            color: #99a1a5 !important;
+            text-decoration: none !important;
+            font-size: 20px;
+            &:hover {
+              color: var(--main-color) !important;
+            }
+          }
+        }
+      }
+      &-title {
+        font-size: 14px;
+        font-weight: 300;
+        color: #7d8388;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+        li {
+          a {
+            font-size: 16px;
+            font-weight: 400;
+            color: #99a1a5 !important;
+            text-decoration: none !important;
+            &:hover {
+              color: var(--main-color) !important;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 1200px) {
+      .footer-col {
+        &.about-footer {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+}
