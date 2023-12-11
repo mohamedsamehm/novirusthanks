@@ -506,8 +506,7 @@ footer .footer-cols .footer-col ul li a:hover {
 }
 @font-face {
   font-family: "Corbel";
-  src: url("../fonts/CORBEL.ttf");
-  src: url("../fonts/CORBELB.ttf") format("truetype");
+  src: url("../fonts/corbeli.ttf");
   font-weight: normal;
   font-style: normal;
 }
