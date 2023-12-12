@@ -37,7 +37,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   padding: 8px 0;
   background-color: #4a37e5;
   color: #fff;
@@ -73,8 +72,25 @@
   }
 }
 @media (max-width: 768px) {
+  .top-bar p {
+    font-size: 12px;
+  }
+  .top-bar a {
+    width: 90px;
+    padding: 6px;
+  }
+}
+@media (max-width: 576px) {
   .top-bar {
-    flex-direction: column;
+    gap: 4px;
+  }
+  .top-bar p {
+    font-size: 9px;
+  }
+  .top-bar a {
+    font-size: 9px;
+    padding: 7px 1px;
+    width: 60px;
   }
 }
 
@@ -794,13 +810,7 @@ button {
     font-size: 38px;
   }
   .hero .apivoid-box {
-    gap: 40px;
-    padding: 80px 16px 36px 16px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  }
-  .hero .apivoid-box .apivoid-box-info {
-    order: 2;
-    position: relative;
+    padding: 36px 24px 16px 24px;
   }
   .hero .apivoid-box .apivoid-box-info .apivoid-box-top-text {
     margin-bottom: 14px;
@@ -821,6 +831,17 @@ button {
   }
   .hero .apivoid-box .apivoid-box-image img {
     max-height: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .hero .apivoid-box {
+    gap: 40px;
+    padding: 80px 16px 36px 16px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+  .hero .apivoid-box .apivoid-box-info {
+    order: 2;
+    position: relative;
   }
 }
 @media (max-width: 576px) {
@@ -1101,7 +1122,6 @@ button {
   display: flex;
   align-items: center;
   gap: 40px;
-  flex-wrap: wrap;
 }
 .overpassed .overpassed-numbers .overpassed-number-info {
   display: flex;
@@ -1138,6 +1158,20 @@ button {
 @media (max-width: 768px) {
   .overpassed .overpassed-numbers {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  }
+  .overpassed .overpassed-numbers .overpassed-number {
+    padding: 43px 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .overpassed .overpassed-numbers .overpassed-number-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+  }
+  .overpassed .overpassed-numbers .overpassed-number-title {
+    font-size: 40px;
   }
 }
 

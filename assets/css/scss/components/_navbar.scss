@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   padding: 8px 0;
   background-color: #4a37e5;
   color: #fff;
@@ -37,7 +36,24 @@
     }
   }
   @media (max-width: 768px) {
-    flex-direction: column;
+    p {
+      font-size: 12px;
+    }
+    a {
+      width: 90px;
+      padding: 6px;
+    }
+  }
+  @media (max-width: 576px) {
+    gap: 4px;
+    p {
+      font-size: 9px;
+    }
+    a {
+      font-size: 9px;
+      padding: 7px 1px;
+      width: 60px;
+    }
   }
 }
 
