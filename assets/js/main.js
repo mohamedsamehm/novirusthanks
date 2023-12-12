@@ -6,32 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
    */
 
   let navbar = document.querySelector(".navbar");
+  let topBar = document.querySelector(".top-bar");
 
   if (navbar == null) return;
 
-  let navbarClass = navbar.classList,
-    navbarH = navbar.offsetHeight,
-    scrollOffset = 500;
+  let topBarH = topBar.offsetHeight;
 
-  if (navbarClass.contains("position-absolute")) {
-    window.addEventListener("scroll", (e) => {
-      if (e.currentTarget.pageYOffset > scrollOffset) {
-        navbar.classList.add("navbar-stuck");
-      } else {
-        navbar.classList.remove("navbar-stuck");
-      }
-    });
-  } else {
-    window.addEventListener("scroll", (e) => {
-      if (e.currentTarget.pageYOffset > scrollOffset) {
-        document.body.style.paddingTop = navbarH + "px";
-        navbar.classList.add("navbar-stuck");
-      } else {
-        document.body.style.paddingTop = "";
-        navbar.classList.remove("navbar-stuck");
-      }
-    });
-  }
+  window.addEventListener("scroll", (e) => {
+    navbar.classList.toggle(
+      "navbar-stuck",
+      e.currentTarget.pageYOffset > topBarH
+    );
+  });
 
   /**
    * Toggle class collapsed for navbar-toggler
@@ -41,8 +27,37 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let index = 0; index < navbarTogglerBtns.length; index++) {
     const element = navbarTogglerBtns[index];
     element?.addEventListener("click", (event) => {
+      event.stopPropagation();
       element.classList.toggle("collapsed");
+      if (navbarCollapse.classList.contains("show")) {
+        navbarCollapse.classList.add("collapsing");
+      }
       navbarCollapse.classList.toggle("show");
+    });
+  }
+  /**
+   * Stop Propagation onclick on navbar-collapse
+   */
+  navbarCollapse.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  /**
+   * Close navbar-collpase onclick on widnow
+   */
+  window.addEventListener("click", (e) => {
+    navbarCollapse.classList.remove("show");
+    navbarCollapse.classList.add("collapsing");
+  });
+
+  /**
+   * Toggle Dropdown Menu
+   */
+  let dropdownToggleBtns = document.querySelectorAll(".dropdown-toggle");
+  for (let index = 0; index < dropdownToggleBtns.length; index++) {
+    const element = dropdownToggleBtns[index];
+    element?.addEventListener("click", (event) => {
+      element.classList.toggle("show");
     });
   }
 });

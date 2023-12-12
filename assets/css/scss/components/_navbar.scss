@@ -43,7 +43,7 @@
 
 // Navbar
 .navbar {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -52,14 +52,12 @@
   background-color: transparent;
   width: 100%;
   left: 0;
-  &.position-absolute {
-    position: absolute;
-  }
+  z-index: 9999999;
+  transition: 0.6s;
   &.navbar-stuck {
     background-color: #0c1620;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 9999999;
   }
   .container {
     display: flex;
@@ -172,11 +170,6 @@
               }
             }
           }
-          &:hover {
-            .dropdown-menu {
-              display: block;
-            }
-          }
         }
         .nav-link {
           display: block;
@@ -201,12 +194,6 @@
             padding-right: 18px;
             align-items: center;
             justify-content: space-between;
-            &:hover {
-              &::after {
-                transform: rotate(-135deg);
-                top: 9px;
-              }
-            }
             &::after {
               content: "";
               border-bottom-style: solid;
@@ -221,6 +208,15 @@
               width: 8px;
               transform: rotate(45deg);
               transition: all 0.2s ease-in-out;
+            }
+            &.show {
+              & + .dropdown-menu {
+                display: block;
+              }
+              &::after {
+                transform: rotate(-135deg);
+                top: 9px;
+              }
             }
           }
         }
@@ -257,8 +253,6 @@
       width: 30px;
     }
     .navbar-collapse {
-      flex-basis: 100%;
-      flex-direction: column;
       background-color: #000;
       position: fixed;
       right: -100%;
@@ -267,7 +261,6 @@
       width: 300px;
       max-width: 350px;
       padding: 30px 0;
-      animation: slide-out-right 200ms forwards;
       z-index: 99999;
       .navbar-collapse-header {
         display: flex;
@@ -292,6 +285,9 @@
             }
           }
         }
+      }
+      &.collapsing {
+        animation: slide-out-right 200ms forwards;
       }
       .navbar-nav {
         flex-direction: column;
@@ -322,11 +318,6 @@
                 }
               }
             }
-            &:hover {
-              .dropdown-menu {
-                display: block;
-              }
-            }
           }
           .nav-link {
             &.active,
@@ -340,12 +331,6 @@
               padding-right: 18px;
               align-items: center;
               justify-content: space-between;
-              &:hover {
-                &::after {
-                  transform: rotate(-135deg);
-                  top: 9px;
-                }
-              }
             }
           }
         }

@@ -79,7 +79,7 @@
 }
 
 .navbar {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -88,15 +88,13 @@
   background-color: transparent;
   width: 100%;
   left: 0;
-}
-.navbar.position-absolute {
-  position: absolute;
+  z-index: 9999999;
+  transition: 0.6s;
 }
 .navbar.navbar-stuck {
   background-color: #0c1620;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 9999999;
 }
 .navbar .container {
   display: flex;
@@ -209,9 +207,6 @@
   background-color: rgb(32, 50, 73) !important;
   color: #dee2e6;
 }
-.navbar .navbar-collapse .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-}
 .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   display: block;
   line-height: 1.4;
@@ -236,10 +231,6 @@
   align-items: center;
   justify-content: space-between;
 }
-.navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle:hover::after {
-  transform: rotate(-135deg);
-  top: 9px;
-}
 .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle::after {
   content: "";
   border-bottom-style: solid;
@@ -254,6 +245,13 @@
   width: 8px;
   transform: rotate(45deg);
   transition: all 0.2s ease-in-out;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle.show + .dropdown-menu {
+  display: block;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle.show::after {
+  transform: rotate(-135deg);
+  top: 9px;
 }
 .navbar .navbar-collapse .social-icons {
   display: flex;
@@ -285,8 +283,6 @@
     width: 30px;
   }
   .navbar .navbar-collapse {
-    flex-basis: 100%;
-    flex-direction: column;
     background-color: #000;
     position: fixed;
     right: -100%;
@@ -295,7 +291,6 @@
     width: 300px;
     max-width: 350px;
     padding: 30px 0;
-    animation: slide-out-right 200ms forwards;
     z-index: 99999;
   }
   .navbar .navbar-collapse .navbar-collapse-header {
@@ -319,6 +314,9 @@
   .navbar .navbar-collapse .navbar-collapse-header .navbar-toggler span:nth-child(2) {
     top: 12px;
     transform: rotate(-135deg);
+  }
+  .navbar .navbar-collapse.collapsing {
+    animation: slide-out-right 200ms forwards;
   }
   .navbar .navbar-collapse .navbar-nav {
     flex-direction: column;
@@ -350,9 +348,6 @@
     background-color: transparent !important;
     color: var(--main-color) !important;
   }
-  .navbar .navbar-collapse .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-  }
   .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.active, .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.show, .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
     color: var(--main-color) !important;
   }
@@ -362,10 +357,6 @@
     padding-right: 18px;
     align-items: center;
     justify-content: space-between;
-  }
-  .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle:hover::after {
-    transform: rotate(-135deg);
-    top: 9px;
   }
   .navbar .navbar-collapse .social-icons {
     justify-content: flex-start;
@@ -803,9 +794,9 @@ button {
     font-size: 38px;
   }
   .hero .apivoid-box {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     padding: 80px 16px 36px 16px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
   .hero .apivoid-box .apivoid-box-info {
     order: 2;
@@ -830,6 +821,11 @@ button {
   }
   .hero .apivoid-box .apivoid-box-image img {
     max-height: 250px;
+  }
+}
+@media (max-width: 576px) {
+  .hero .apivoid-box {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
@@ -867,13 +863,15 @@ button {
 .featured-projects .projects .project {
   background-color: #09121e;
   padding: 36px 35px 58px 30px;
-  border-radius: 20px;
+  border-radius: 17px;
+  overflow: hidden;
 }
 .featured-projects .projects .project .project-title {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 18px;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
   color: #fff;
   margin-bottom: 24px;
@@ -926,11 +924,12 @@ button {
   justify-content: center;
 }
 .featured-projects .projects .project.big-project .project-info .project-title {
-  font-size: 40px;
+  font-size: 36px;
   margin-bottom: 32px;
 }
 .featured-projects .projects .project.big-project .project-info .project-subtitle {
-  font-size: 26px;
+  font-size: 22px;
+  font-weight: 400;
   color: #f2f2f2;
   margin-bottom: 32px;
 }
@@ -953,9 +952,12 @@ button {
     padding: 36px 0px 58px 30px;
     grid-column: auto;
     gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   }
-  .featured-projects .projects .project.big-project .project-info {
-    order: 2;
+}
+@media (max-width: 576px) {
+  .featured-projects .projects {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
@@ -1061,6 +1063,9 @@ button {
   }
 }
 @media (max-width: 992px) {
+  .company-information-row {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
   .company-information-row .company-info-image {
     margin: auto !important;
     max-width: 400px;
@@ -1096,6 +1101,7 @@ button {
   display: flex;
   align-items: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 .overpassed .overpassed-numbers .overpassed-number-info {
   display: flex;
@@ -1129,6 +1135,11 @@ button {
 .overpassed .overpassed-numbers .overpassed-number-subtitle strong {
   font-weight: 500;
 }
+@media (max-width: 768px) {
+  .overpassed .overpassed-numbers {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  }
+}
 
 .newsletter {
   padding: 140px 0 160px 0;
@@ -1153,6 +1164,7 @@ button {
   border-radius: 10px 0 0 10px;
   flex: 1;
   height: 55px;
+  max-width: 100%;
 }
 .newsletter .input-group input:focus {
   outline: none;
@@ -1161,6 +1173,20 @@ button {
   border-radius: 0 10px 10px 0;
   width: auto;
   padding: 18px 30px;
+}
+@media (max-width: 768px) {
+  .newsletter .input-group {
+    max-width: 100% !important;
+  }
+  .newsletter .input-group input {
+    max-width: calc(100% - 110px);
+    height: 50px;
+  }
+  .newsletter .input-group .btn-subscribe {
+    width: 95px;
+    font-size: 14px;
+    height: 50px;
+  }
 }
 
 @keyframes gradient {
