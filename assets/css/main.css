@@ -709,7 +709,7 @@ button {
   margin-bottom: 18px;
   text-align: center;
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .section-title {
     font-size: 32px;
     line-height: 1.4;
@@ -724,7 +724,7 @@ button {
   max-width: 520px;
   text-align: center;
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .section-description {
     font-size: 15px;
   }
@@ -805,7 +805,7 @@ button {
 .hero .apivoid-box .apivoid-box-image img {
   max-width: 100%;
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .hero .hero-info h1.section-title {
     font-size: 38px;
   }
@@ -833,7 +833,7 @@ button {
     max-height: 250px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .hero .apivoid-box {
     gap: 40px;
     padding: 80px 16px 36px 16px;
@@ -844,7 +844,7 @@ button {
     position: relative;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   .hero .apivoid-box {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
@@ -968,7 +968,7 @@ button {
   -o-object-position: left;
      object-position: left;
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .featured-projects .projects .project.big-project {
     padding: 36px 0px 58px 30px;
     grid-column: auto;
@@ -976,7 +976,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   .featured-projects .projects {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
@@ -1083,7 +1083,7 @@ button {
     gap: 50px;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .company-information-row {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
@@ -1155,7 +1155,7 @@ button {
 .overpassed .overpassed-numbers .overpassed-number-subtitle strong {
   font-weight: 500;
 }
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .overpassed .overpassed-numbers {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
   }
@@ -1208,7 +1208,7 @@ button {
   width: auto;
   padding: 18px 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .newsletter .input-group {
     max-width: 100% !important;
   }

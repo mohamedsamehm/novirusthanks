@@ -36,7 +36,7 @@
   color: #1f1f1f;
   margin-bottom: 18px;
   text-align: center;
-  @media (max-width: 992px) {
+  @media (max-width: 991.98px) {
     font-size: 32px;
     line-height: 1.4;
   }
@@ -48,7 +48,7 @@
   margin: 0 auto 58px auto;
   max-width: 520px;
   text-align: center;
-  @media (max-width: 992px) {
+  @media (max-width: 991.98px) {
     font-size: 15px;
   }
 }
@@ -128,7 +128,7 @@
       }
     }
   }
-  @media (max-width: 992px) {
+  @media (max-width: 991.98px) {
     .hero-info {
       h1.section-title {
         font-size: 38px;
@@ -162,7 +162,7 @@
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767.98px) {
     .apivoid-box {
       gap: 40px;
       padding: 80px 16px 36px 16px;
@@ -173,7 +173,7 @@
       }
     }
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575.98px) {
     .apivoid-box {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -301,7 +301,7 @@
       }
     }
   }
-  @media (max-width: 992px) {
+  @media (max-width: 991.98px) {
     .projects {
       .project {
         &.big-project {
@@ -313,7 +313,7 @@
       }
     }
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575.98px) {
     .projects {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -419,7 +419,7 @@
     @media (max-width: 1200px) {
       gap: 50px;
     }
-    @media (max-width: 992px) {
+    @media (max-width: 991.98px) {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       .company-info-image {
         margin: auto !important;
@@ -490,7 +490,7 @@
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767.98px) {
     .overpassed-numbers {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
       .overpassed-number {
@@ -544,7 +544,7 @@
       padding: 18px 30px;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767.98px) {
     .input-group {
       max-width: 100% !important;
       input {
