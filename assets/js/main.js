@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let index = 0; index < dropdownToggleBtns.length; index++) {
     const element = dropdownToggleBtns[index];
     element?.addEventListener("click", (event) => {
+      event.preventDefault();
       element.classList.toggle("show");
     });
   }
