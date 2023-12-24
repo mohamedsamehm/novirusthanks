@@ -145,3 +145,24 @@ textarea {
 button {
   border-radius: 0;
 }
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.checklist-background {
+  background: linear-gradient(to bottom, #fbf4e3, #fffdf8);
+}
+
+.faqs-background {
+  background: linear-gradient(to bottom, #e9f4fe, #f9fdff);
+}
+
+.about-background {
+  background-color: #dfeefb;
+  background-image: linear-gradient(180deg, #dfeefb, #f8fdff 20%); //
+}

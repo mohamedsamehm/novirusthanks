@@ -1,0 +1,18 @@
+.watch-osarmor {
+  padding: 148px 0 137px 0;
+  background-color: #f7f7f7;
+  .section-title {
+    margin-bottom: 40px;
+  }
+  .section-description {
+    margin-bottom: 65px;
+    max-width: 720px;
+  }
+  .video {
+    margin-bottom: 65px;
+    iframe {
+      width: 100%;
+      height: 580px;
+    }
+  }
+}

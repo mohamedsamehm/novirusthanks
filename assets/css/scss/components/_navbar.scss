@@ -75,6 +75,9 @@
     position: fixed;
     top: 0;
   }
+  &.navbar-black {
+    background-color: #0c1620;
+  }
   .container {
     display: flex;
     flex-wrap: inherit;

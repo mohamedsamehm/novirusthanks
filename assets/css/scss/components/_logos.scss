@@ -1,0 +1,21 @@
+// logos
+.logos {
+  padding: 70px 0 85px 0;
+  background-color: #f8fafc;
+  .logos-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+  }
+  img {
+    max-width: 225px;
+    width: 100%;
+    filter: grayscale(1);
+    cursor: pointer;
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.company-info-table {
+  padding: 135px 0 170px 0;
+  .section-description {
+    margin-bottom: 60px;
+    max-width: 600px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    tr {
+      &:nth-child(odd) {
+        background-color: #f3f6ff;
+      }
+    }
+    th,
+    td {
+      text-align: left;
+      padding: 16px 26px;
+      border: none;
+      font-size: 16px;
+      font-weight: 300;
+      color: #455362;
+      overflow-wrap: anywhere;
+    }
+    th {
+      font-weight: 400;
+      color: #1f1f1f;
+      width: 30%;
+    }
+  }
+  @media (max-width: 767.98px) {
+    table {
+      td,
+      th {
+        padding: 12px;
+        font-size: 14px;
+      }
+      th {
+        width: auto;
+      }
+    }
+  }
+}
