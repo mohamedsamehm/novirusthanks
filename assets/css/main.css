@@ -1299,7 +1299,7 @@ footer .footer-cols .footer-col ul li a:hover {
 }
 .hero.hero-projects .section-title {
   max-width: 770px;
-  color: #1f1f1f;
+  color: #1f1f1f !important;
 }
 .hero.hero-projects .section-description {
   max-width: 640px;
