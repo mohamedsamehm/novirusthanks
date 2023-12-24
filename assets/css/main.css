@@ -1160,6 +1160,7 @@ footer .footer-cols .footer-col ul li a:hover {
 }
 .featured-projects.all-projects {
   padding-bottom: 240px;
+  background-color: transparent !important;
 }
 .featured-projects.featured-projects-contacts {
   padding-top: 140px;
