@@ -131,6 +131,9 @@
   }
   &.hero-projects {
     padding: 140px 0 0 0;
+    .hero-info {
+      max-width: 770px !important;
+    }
     .section-title {
       max-width: 770px;
       color: #1f1f1f !important;
